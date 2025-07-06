@@ -25,19 +25,29 @@ form {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+form:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 label {
     display: block;
-    margin: 10px 0 5px;
+    margin: 15px 0 5px;
 }
 
 select {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border 0.3s;
+}
+
+select:hover {
+    border-color: #28a745;
 }
 
 button {
@@ -47,17 +57,24 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s;
 }
 
 button:hover {
     background: #218838;
+    transform: translateY(-2px);
 }
 
 #totalPrice {
     font-weight: bold;
+    margin-top: 20px;
 }
 
 #compatibilityMessage {
     margin-top: 10px;
     font-weight: bold;
+}
+
+#result {
+    margin-top: 30px;
 }

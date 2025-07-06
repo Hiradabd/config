@@ -9,11 +9,11 @@ document.getElementById('configForm').addEventListener('submit', function(event)
 
     const configList = document.getElementById('configList');
     configList.innerHTML = `
-        <li>CPU: ${cpu.value} - ${cpu.options[cpu.selectedIndex].dataset.price}$</li>
-        <li>GPU: ${gpu.value} - ${gpu.options[gpu.selectedIndex].dataset.price}$</li>
-        <li>مادربرد: ${motherboard.value} - ${motherboard.options[motherboard.selectedIndex].dataset.price}$</li>
-        <li>رم: ${ram.value} - ${ram.options[ram.selectedIndex].dataset.price}$</li>
-        <li>هارد: ${storage.value} - ${storage.options[storage.selectedIndex].dataset.price}$</li>
+        <li><strong>CPU:</strong> <span class="no-wrap">${cpu.value} - ${cpu.options[cpu.selectedIndex].dataset.price}$ (${cpu.options[cpu.selectedIndex].dataset.specs})</span></li>
+        <li><strong>GPU:</strong> <span class="no-wrap">${gpu.value} - ${gpu.options[gpu.selectedIndex].dataset.price}$ (${gpu.options[gpu.selectedIndex].dataset.specs})</span></li>
+        <li><strong>Motherboard:</strong> <span class="no-wrap">${motherboard.value} - ${motherboard.options[motherboard.selectedIndex].dataset.price}$ (${motherboard.options[motherboard.selectedIndex].dataset.specs})</span></li>
+        <li><strong>RAM:</strong> <span class="no-wrap">${ram.value} - ${ram.options[ram.selectedIndex].dataset.price}$ (${ram.options[ram.selectedIndex].dataset.specs})</span></li>
+        <li><strong>Hard:</strong> <span class="no-wrap">${storage.value} - ${storage.options[storage.selectedIndex].dataset.price}$ (${storage.options[storage.selectedIndex].dataset.specs})</span></li>
     `;
 
     // محاسبه قیمت کل
@@ -25,17 +25,22 @@ document.getElementById('configForm').addEventListener('submit', function(event)
 
     document.getElementById('totalPrice').innerText = `قیمت کل: ${totalPrice}$`;
 
-    // پیام سازگاری
-    const compatibilityMessage = checkCompatibility(cpu.value, gpu.value);
+    // پیام سازگاری به روز شده
+    const compatibilityMessage = checkCompatibility(cpu.value, motherboard.value);
     document.getElementById('compatibilityMessage').innerText = compatibilityMessage;
 
     document.getElementById('result').style.display = 'block';
 });
 
-// تابع بررسی سازگاری
-function checkCompatibility(cpu, gpu) {
-    if (cpu.includes("intel") && gpu.includes("amd")) {
-        return "توجه: CPU و GPU سازگار نیستند.";
+// تابع بررسی سازگاری بین CPU و مادربرد
+function checkCompatibility(cpu, motherboard) {
+    // که در آن می‌گوییم مادربرد ASUS ROG Strix فقط با Intel i9 سازگار است
+    if (motherboard.includes("asus rog strix") && !cpu.includes("intel")) {
+        return "توجه: مادربرد Asus ROG Strix فقط با CPU های اینتل سازگار است.";
+    }
+    // که در آن می‌گوییم مادربرد MSI B450 فقط با AMD Ryzen سازگار است
+    if (motherboard.includes("msi b450") && !cpu.includes("amd")) {
+        return "توجه: مادربرد MSI B450 فقط با CPU های AMD سازگار است.";
     }
     return "همه قطعات سازگارند.";
 }

@@ -17,37 +17,38 @@
             <form id="configForm">
                 <label for="cpu">CPU:</label>
                 <select id="cpu" name="cpu">
-                    <option value="intel i9" data-price="500">Intel i9 - 500$</option>
-                    <option value="amd ryzen 9" data-price="400">AMD Ryzen 9 - 400$</option>
+                    <option value="intel i9" data-price="500" data-specs="8 هسته، 16 رشته">Intel i9 - 500$</option>
+                    <option value="amd ryzen 9" data-price="400" data-specs="12 هسته، 24 رشته">AMD Ryzen 9 - 400$</option>
                 </select>
                 
                 <label for="gpu">GPU:</label>
                 <select id="gpu" name="gpu">
-                    <option value="nvidia rtx 3080" data-price="700">NVIDIA RTX 3080 - 700$</option>
-                    <option value="amd radeon 6800" data-price="600">AMD Radeon 6800 - 600$</option>
+                    <option value="nvidia rtx 3080" data-price="700" data-specs="10 گیگابایت، تکنولوژی Ray Tracing">NVIDIA RTX 3080 - 700$</option>
+                    <option value="amd radeon 6800" data-price="600" data-specs="16 گیگابایت، سازنده AMD">AMD Radeon 6800 - 600$</option>
                 </select>
                 
-                <label for="motherboard">مادربرد:</label>
+                <label for="motherboard">MotherBoard:</label>
                 <select id="motherboard" name="motherboard">
-                    <option value="asus rog strix" data-price="250">Asus ROG Strix - 250$</option>
-                    <option value="msi b450" data-price="150">MSI B450 - 150$</option>
+                    <option value="asus rog strix" data-price="250" data-specs="سازگار با همه CPU های نسل جدید">Asus ROG Strix - 250$</option>
+                    <option value="msi b450" data-price="150" data-specs="مناسب برای پردازنده‌های AMD">MSI B450 - 150$</option>
                 </select>
                 
-                <label for="ram">رم:</label>
+                <label for="ram">RAM:</label>
                 <select id="ram" name="ram">
-                    <option value="16gb" data-price="80">16GB - 80$</option>
-                    <option value="32gb" data-price="150">32GB - 150$</option>
+                    <option value="16gb" data-price="80" data-specs="DDR4، فرکانس 3200MHz">16GB - 80$</option>
+                    <option value="32gb" data-price="150" data-specs="DDR4، فرکانس 3200MHz">32GB - 150$</option>
                 </select>
                 
-                <label for="storage">هارد:</label>
+                <label for="storage">Hard:</label>
                 <select id="storage" name="storage">
-                    <option value="1tb ssd" data-price="120">1TB SSD - 120$</option>
-                    <option value="2tb hdd" data-price="60">2TB HDD - 60$</option>
+                    <option value="1tb ssd" data-price="120" data-specs="سرعت بالا، ذخیره‌سازی سریع">1TB SSD - 120$</option>
+                    <option value="2tb hdd" data-price="60" data-specs="ظرفیت بالا، اقتصادی">2TB HDD - 60$</option>
                 </select>
 
                 <button type="submit">محاسبه کن</button>
             </form>
         </section>
+        
         <section id="result" style="display:none;">
             <h2>کانفیگ نهایی شما:</h2>
             <ul id="configList"></ul>
