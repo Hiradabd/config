@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کانفیگ سیستم</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>کانفیگ سیستم</h1>
+    </header>
+    
+    <main>
+        <section id="configurator">
+            <h2>قطعات سیستم خود را انتخاب کنید</h2>
+            <form id="configForm">
+                <label for="cpu">CPU:</label>
+                <select id="cpu" name="cpu">
+                    <option value="intel i9" data-price="500">Intel i9 - 500$</option>
+                    <option value="amd ryzen 9" data-price="400">AMD Ryzen 9 - 400$</option>
+                </select>
+                
+                <label for="gpu">GPU:</label>
+                <select id="gpu" name="gpu">
+                    <option value="nvidia rtx 3080" data-price="700">NVIDIA RTX 3080 - 700$</option>
+                    <option value="amd radeon 6800" data-price="600">AMD Radeon 6800 - 600$</option>
+                </select>
+                
+                <label for="motherboard">مادربرد:</label>
+                <select id="motherboard" name="motherboard">
+                    <option value="asus rog strix" data-price="250">Asus ROG Strix - 250$</option>
+                    <option value="msi b450" data-price="150">MSI B450 - 150$</option>
+                </select>
+                
+                <label for="ram">رم:</label>
+                <select id="ram" name="ram">
+                    <option value="16gb" data-price="80">16GB - 80$</option>
+                    <option value="32gb" data-price="150">32GB - 150$</option>
+                </select>
+                
+                <label for="storage">هارد:</label>
+                <select id="storage" name="storage">
+                    <option value="1tb ssd" data-price="120">1TB SSD - 120$</option>
+                    <option value="2tb hdd" data-price="60">2TB HDD - 60$</option>
+                </select>
+
+                <button type="submit">محاسبه کن</button>
+            </form>
+        </section>
+        <section id="result" style="display:none;">
+            <h2>کانفیگ نهایی شما:</h2>
+            <ul id="configList"></ul>
+            <p id="totalPrice"></p>
+            <p id="compatibilityMessage" style="color: red;"></p>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
