@@ -16,8 +16,23 @@ main {
     padding: 20px;
 }
 
-h2 {
+h2, h3, h4 {
     color: #333;
+}
+
+.cpu-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.cpu-selection div {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.cpu-selection div:last-child {
+    margin-right: 0;
 }
 
 form {
@@ -35,6 +50,10 @@ form:hover {
 label {
     display: block;
     margin: 15px 0 5px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
 }
 
 select {
@@ -73,6 +92,7 @@ button:hover {
 #compatibilityMessage {
     margin-top: 10px;
     font-weight: bold;
+    color: red;
 }
 
 #result {

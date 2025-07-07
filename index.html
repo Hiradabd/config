@@ -15,11 +15,28 @@
         <section id="configurator">
             <h2>قطعات سیستم خود را انتخاب کنید</h2>
             <form id="configForm">
-                <label for="cpu">CPU:</label>
-                <select id="cpu" name="cpu">
-                    <option value="intel i9" data-price="500" data-specs="8 هسته، 16 رشته">Intel i9 - 500$</option>
-                    <option value="amd ryzen 9" data-price="400" data-specs="12 هسته، 24 رشته">AMD Ryzen 9 - 400$</option>
-                </select>
+                <h3>CPU:</h3>
+                <div class="cpu-selection">
+                    <label>
+                        <input type="radio" id="select-intel" name="cpu-brand" value="intel" onchange="toggleCPUs(this)"> Intel
+                    </label>
+                    <label>
+                        <input type="radio" id="select-amd" name="cpu-brand" value="amd" onchange="toggleCPUs(this)"> AMD
+                    </label>
+                </div>
+                
+                <div id="cpu-select" style="display: none;">
+                    <label for="cpu">مدل CPU:</label>
+                    <select id="cpu" name="cpu">
+                        <!-- گزینه‌های Intel -->
+                        <option value="" disabled selected>لطفاً یک مدل انتخاب کنید</option>
+                        <option value="intel i9" data-price="500" data-specs="8 هسته، 16 رشته">Intel i9 - 500$</option>
+                        <option value="intel i7" data-price="300" data-specs="6 هسته، 12 رشته">Intel i7 - 300$</option>
+                        <!-- گزینه‌های AMD -->
+                        <option value="amd ryzen 9" data-price="400" data-specs="12 هسته، 24 رشته">AMD Ryzen 9 - 400$</option>
+                        <option value="amd ryzen 7" data-price="250" data-specs="8 هسته، 16 رشته">AMD Ryzen 7 - 250$</option>
+                    </select>
+                </div>
                 
                 <label for="gpu">GPU:</label>
                 <select id="gpu" name="gpu">
